@@ -1,0 +1,20 @@
+---
+import AboutHeroImage from '../assets/blog-placeholder-about.jpg';
+import Layout from '../layouts/BlogPost.astro';
+---
+
+<Layout
+	title="Books"
+	description="A curated list of books I've read and recommend"
+	pubDate={new Date()}
+	heroImage={AboutHeroImage}
+>
+    <h1>Books</h1>
+    <p>Here’s a list of books I’ve read or recommend.</p>
+  
+    <ul>
+      <li>Life and Fate — Vasily Grossman</li>
+      <li>East of Eden — John Steinbeck</li>
+      <li>Sometimes a Great Notion — Ken Kesey</li>
+    </ul>
+  </Layout>
