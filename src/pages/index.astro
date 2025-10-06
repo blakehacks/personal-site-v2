@@ -1,9 +1,9 @@
 ---
-import Layout from '../layouts/BaseLayout.astro';
+import HomeLayout from '../layouts/HomeLayout.astro';
 const NAME = 'Blake Maczka';
 ---
 
-<Layout title="Home">
+<HomeLayout title="Home">
   <main class="home">
     <a href="/about" class="nametag" aria-label="Go to About page">
       <svg
@@ -48,10 +48,15 @@ const NAME = 'Blake Maczka';
 
   <style>
     .home {
-      min-height: calc(100vh - var(--site-header-height, 64px));
+      height: calc(100vh - var(--site-header-height, 64px));
       display: flex;
       justify-content: center;
-      padding-top: 85px;
+      align-items: flex-start;
+      padding: 85px 0 0 0;
+      box-sizing: border-box;
+      margin: 0;
+      max-width: none;
+      width: 100%;
     }
 
     .nametag {
@@ -80,4 +85,4 @@ const NAME = 'Blake Maczka';
       .nametag { transition: none; }
     }
   </style>
-</Layout>
+</HomeLayout>
