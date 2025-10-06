@@ -67,9 +67,11 @@ const NAME = 'Blake Maczka';
       border-radius: 1.75rem;s
     }
 
-    .nametag:hover,
-    .nametag:focus-visible {
-      transform: scale(1.15);
+    @media (hover: hover) and (pointer: fine) {
+      .nametag:hover,
+      .nametag:focus-visible {
+        transform: scale(1.15);
+      }
     }
 
     .tag-svg {
