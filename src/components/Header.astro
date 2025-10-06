@@ -54,6 +54,15 @@ import HeaderLink from './HeaderLink.astro';
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
+		position: relative;
+	}
+	
+	.internal-links {
+		position: absolute;
+		left: 50%;
+		transform: translateX(-50%);
+		display: flex;
+		gap: 1em;
 	}
 	nav a {
 		padding: 1em 0.5em;
