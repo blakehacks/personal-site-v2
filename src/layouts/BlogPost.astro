@@ -51,6 +51,13 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 			.last-updated-on {
 				font-style: italic;
 			}
+			/* minimal hover polish for the back button */
+			.btn-back:hover {
+				transform: translateY(-2px);
+				box-shadow: 0 6px 18px rgba(0,0,0,.12);
+				background: #fafafa;
+				border-color: #ccc;
+			}
 		</style>
 	</head>
 
@@ -62,6 +69,35 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 					{heroImage && <Image width={1020} height={510} src={heroImage} alt="" />}
 				</div>
 				<div class="prose">
+					<!-- 🔙 Back button ABOVE date/title -->
+					<div style="display:flex;justify-content:center;margin:0 0 .5rem 0;">
+						<a
+							href="/blog"
+							class="btn-back"
+							aria-label="Go back to blog index"
+							style="
+								display:inline-flex;
+								align-items:center;
+								justify-content:center;
+								gap:.5rem;
+								padding:.8rem 1.4rem;
+								border-radius:9999px;
+								text-decoration:none;
+								font-weight:700;
+								font-size:1rem;
+								letter-spacing:.2px;
+								background:#fff;
+								color:#111;
+								border:2px solid #ddd;
+								box-shadow:0 3px 10px rgba(0,0,0,.08);
+								margin:-25px 0 25px 0;
+								transition:transform .18s ease, box-shadow .18s ease, background .18s ease, border-color .18s ease;
+							"
+						>
+							← Back to Blog
+						</a>
+					</div>
+
 					<div class="title">
 						<div class="date">
 							<FormattedDate date={pubDate} />
