@@ -1,53 +1,273 @@
 ---
+import type { CollectionEntry } from 'astro:content';
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 
-const { title, description = "Blake Maczka's personal website" } = Astro.props;
+type Props = CollectionEntry<'blog'>['data'];
+
+const { title = "Books I've Read", description = "Blake Maczka's personal website" } = Astro.props;
 ---
 
 <html lang="en">
 	<head>
 		<BaseHead title={title} description={description} />
+		<style>
+			main {
+				width: calc(100% - 2em);
+				max-width: 100%;
+				margin: 0;
+			}
+			.hero-image {
+				width: 100%;
+			}
+			.hero-image img {
+				display: block;
+				margin: 0 auto;
+				border-radius: 12px;
+				box-shadow: var(--box-shadow);
+			}
+			.prose {
+				width: 720px;
+				max-width: calc(100% - 2em);
+				margin: auto;
+				padding: 1em;
+				color: rgb(var(--gray-dark));
+			}
+			.title {
+				margin-bottom: 1em;
+				padding: 1em 0;
+				text-align: center;
+				line-height: 1;
+			}
+			.title h1 {
+				margin: 0 0 0.5em 0;
+			}
+
+			/* List formatting fixes */
+			.prose ul {
+				padding: 0;
+				margin: 0;
+				display: block;        /* vertical list */
+				list-style: none;      /* remove bullets (re-add if desired) */
+			}
+			.prose li {
+				margin-bottom: 0.5em;
+				font-size: 1.2em;
+				text-align: left;
+				width: 100%;
+				line-height: 1.4;
+			}
+		</style>
 	</head>
 
 	<body>
 		<Header />
 		<main>
-			<slot />
+			<article>
+				<div class="prose">
+					<div class="title">
+						<h1>{title}</h1>
+						<hr />
+					</div>
+
+					<ul>
+						<li><em>Sovietistan: Travels in Turkmenistan, Kazakhstan, Tajikistan, Kyrgyzstan, and Uzbekistan</em> — Erika Fatland (February 2025)</li>
+						<li><em>The Tower</em> — Kelly Cordes (January 2025)</li>
+						<li><em>The Creation of the American Republic, 1776-1787</em> — Gordon S. Wood (January 2025)</li>
+						<li><em>Founding Brothers: The Revolutionary Generation</em> — Joseph J. Ellis (November 2024)</li>
+						<li><em>Create Dangerously</em> — Albert Camus (August 2024)</li>
+						<li><em>Sometimes a Great Notion</em> — Ken Kesey (August 2024)</li>
+						<li><em>Arbitrary Lines: How Zoning Broke the American City and How to Fix It</em> — M. Nolan Gray (June 2024)</li>
+						<li><em>Levels of the Game</em> — John McPhee (May 2024)</li>
+						<li><em>Desert Solitaire</em> — Edward Abbey (May 2024)</li>
+						<li><em>What Is This Thing Called Love: Poems</em> — Kim Addonizio (March 2024)</li>
+						<li><em>Stay True</em> — Hua Hsu (March 2024)</li>
+						<li><em>Star Maker</em> — Olaf Stapledon (March 2024)</li>
+						<li><em>The Doors of the Sea: Where Was God in the Tsunami</em> — David Bentley Hart (January 2024)</li>
+						<li><em>The Disappearance of God</em> — Richard Elliott Friedman (January 2024)</li>
+						<li><em>Beloved (Beloved Trilogy, #1)</em> — Toni Morrison (December 2023)</li>
+						<li><em>Just for Fun: The Story of an Accidental Revolutionary</em> — Linus Torvalds (November 2023)</li>
+						<li><em>House of Light</em> — Mary Oliver (November 2023)</li>
+						<li><em>I Feel Love: MDMA and the Quest for Connection in a Fractured World</em> — Rachel Nuwer (November 2023)</li>
+						<li><em>The Bluest Eye</em> — Toni Morrison (October 2023)</li>
+						<li><em>The Tsar of Love and Techno</em> — Anthony Marra (October 2023)</li>
+						<li><em>Letters to a Young Poet</em> — Rainer Maria Rilke (September 2023)</li>
+						<li><em>Spare</em> — Prince Harry (May 2023)</li>
+						<li><em>The Year of Magical Thinking</em> — Joan Didion (April 2023)</li>
+						<li><em>Who Wrote the Bible?</em> — Richard Elliott Friedman (March 2023)</li>
+						<li><em>VALIS</em> — Philip K. Dick (February 2023)</li>
+						<li><em>Europe Central</em> — William T. Vollmann (February 2023)</li>
+						<li><em>Peacemaking among Primates</em> — Frans de Waal (November 2022)</li>
+						<li><em>Everything Flows</em> — Vasily Grossman (October 2022)</li>
+						<li><em>The Right Stuff</em> — Tom Wolfe (August 2022)</li>
+						<li><em>Where the Crawdads Sing</em> — Delia Owens (June 2022)</li>
+						<li><em>Life and Fate (Stalingrad, #2)</em> — Vasily Grossman (July 2022)</li>
+						<li><em>Stalingrad (Stalingrad, #1)</em> — Vasily Grossman (April 2022)</li>
+						<li><em>Mother Night</em> — Kurt Vonnegut Jr. (March 2022)</li>
+						<li><em>The Curve of Binding Energy</em> — John McPhee (January 2022)</li>
+						<li><em>Childhood's End</em> — Arthur C. Clarke (January 2022)</li>
+						<li><em>Player Piano</em> — Kurt Vonnegut Jr. (August 2021)</li>
+						<li><em>A Scanner Darkly</em> — Philip K. Dick (June 2021)</li>
+						<li><em>The Three Stigmata of Palmer Eldritch</em> — Philip K. Dick (May 2021)</li>
+						<li><em>Dispatches</em> — Michael Herr (May 2021)</li>
+						<li><em>Love, Kurt: The Vonnegut Love Letters, 1941-1945</em> — Kurt Vonnegut Jr. (April 2021)</li>
+						<li><em>A Contract With God (A Contract With God, #1)</em> — Will Eisner (March 2021)</li>
+						<li><em>Slaughterhouse-Five</em> — Kurt Vonnegut Jr. (March 2021)</li>
+						<li><em>Jax Trax</em> — Jack Olive (February 2021)</li>
+						<li><em>The Sirens of Titan</em> — Kurt Vonnegut Jr. (January 2021)</li>
+						<li><em>A Billion Voices: China’s Search for a Common Language</em> — David Moser (January 2021)</li>
+						<li><em>Zero K</em> — Don DeLillo (January 2021)</li>
+						<li><em>Coup d'État: A Practical Handbook</em> — Edward N. Luttwak (December 2020)</li>
+						<li><em>Cat's Cradle</em> — Kurt Vonnegut Jr. (December 2020)</li>
+						<li><em>Snow Crash</em> — Neal Stephenson (November 2020)</li>
+						<li><em>Zen in the Art of Writing</em> — Ray Bradbury (July 2020)</li>
+						<li><em>Starman: The Truth Behind the Legend of Yuri Gagarin</em> — Piers Bizony; Jamie Doran (April 2020)</li>
+						<li><em>All the Shah's Men: An American Coup and the Roots of Middle East Terror</em> — Stephen Kinzer (March 2020)</li>
+						<li><em>Becoming Mrs. Lewis</em> — Patti Callahan (March 2020)</li>
+						<li><em>Last and First Men</em> — Olaf Stapledon (January 2020)</li>
+						<li><em>God Bless You, Dr. Kevorkian</em> — Kurt Vonnegut Jr. (December 2019)</li>
+						<li><em>Warts and All</em> — Drew Friedman; Josh Alan Friedman (December 2019)</li>
+						<li><em>Black Cracker</em> — Josh Alan Friedman (November 2019)</li>
+						<li><em>Out of Mao's Shadow: The Struggle for the Soul of a New China</em> — Philip P. Pan (November 2019)</li>
+						<li><em>The Man in the High Castle</em> — Philip K. Dick (September 2019)</li>
+						<li><em>John Adams</em> — David McCullough (August 2019)</li>
+						<li><em>To the Finland Station</em> — Edmund Wilson (May 2019)</li>
+						<li><em>Darkness at Noon</em> — Arthur Koestler (April 2019)</li>
+						<li><em>Ho Chi Minh: A Life</em> — William J. Duiker (April 2019)</li>
+						<li><em>Fire in the Lake: The Vietnamese and the Americans in Vietnam</em> — Frances FitzGerald (March 2019)</li>
+						<li><em>Son of the Wilderness: The Life of John Muir</em> — Linnie Marsh Wolfe (February 2019)</li>
+						<li><em>Governing the Commons: The Evolution of Institutions for Collective Action</em> — Elinor Ostrom (February 2019)</li>
+						<li><em>Superforecasting: The Art and Science of Prediction</em> — Philip E. Tetlock; Dan Gardner (February 2019)</li>
+						<li><em>Skin in the Game: Hidden Asymmetries in Daily Life</em> — Nassim Nicholas Taleb (February 2019)</li>
+						<li><em>The Hidden Wound</em> — Wendell Berry (January 2019)</li>
+						<li><em>The Image: A Guide to Pseudo-Events in America</em> — Daniel J. Boorstin (January 2019)</li>
+						<li><em>Annals of the Former World</em> — John McPhee (January 2019)</li>
+						<li><em>My Century</em> — Günter Grass (January 2019)</li>
+						<li><em>The Origin of Consciousness in the Breakdown of the Bicameral Mind</em> — Julian Jaynes (December 2018)</li>
+						<li><em>Cat's Cradle</em> — Kurt Vonnegut Jr. (October 2018)</li>
+						<li><em>Seeing Like a State: How Certain Schemes to Improve the Human Condition Have Failed</em> — James C. Scott (October 2018)</li>
+						<li><em>Libra</em> — Don DeLillo (September 2018)</li>
+						<li><em>Vanity of Duluoz</em> — Jack Kerouac (August 2018)</li>
+						<li><em>American Pastoral</em> — Philip Roth (July 2018)</li>
+						<li><em>Encounters with the Archdruid</em> — John McPhee (July 2018)</li>
+						<li><em>Mastering the VC Game</em> — Jeffrey Bussgang (May 2018)</li>
+						<li><em>Sometimes a Great Notion</em> — Ken Kesey (May 2018)</li>
+						<li><em>Margin of Safety: Risk-Averse Value Investing Strategies for the Thoughtful Investor</em> — Seth A. Klarman (April 2018)</li>
+						<li><em>Venture Deals</em> — Brad Feld; Jason Mendelson (April 2018)</li>
+						<li><em>Ham on Rye</em> — Charles Bukowski (April 2018)</li>
+						<li><em>Childhood</em> — Leo Tolstoy (April 2018)</li>
+						<li><em>The Strangest Man: The Hidden Life of Paul Dirac</em> — Graham Farmelo (April 2018)</li>
+						<li><em>Fifteen Dogs</em> — André Alexis (March 2018)</li>
+						<li><em>One Flew Over the Cuckoo's Nest</em> — Ken Kesey (March 2018)</li>
+						<li><em>Zero to One: Notes on Startups, or How to Build the Future</em> — Peter Thiel (March 2018)</li>
+						<li><em>East of Eden</em> — John Steinbeck (February 2018)</li>
+						<li><em>Dawn of the New Everything: Encounters with Reality and Virtual Reality</em> — Jaron Lanier (February 2018)</li>
+						<li><em>Bright Dead Things</em> — Ada Limón (February 2018)</li>
+						<li><em>A Farewell to Arms</em> — Ernest Hemingway (February 2018)</li>
+						<li><em>Maus I: A Survivor's Tale: My Father Bleeds History</em> — Art Spiegelman (February 2018)</li>
+						<li><em>The Pale King</em> — David Foster Wallace (January 2018)</li>
+
+						<!-- Undated (rated on Goodreads but no BoB date) at bottom -->
+						<li><em>1984</em> — George Orwell</li>
+						<li><em>Abaddon's Gate (The Expanse, #3)</em> — James S.A. Corey</li>
+						<li><em>After Dark</em> — Haruki Murakami</li>
+						<li><em>After Virtue: A Study in Moral Theory</em> — Alasdair MacIntyre</li>
+						<li><em>Against the Fall of Night</em> — Arthur C. Clarke</li>
+						<li><em>All the Pretty Horses</em> — Cormac McCarthy</li>
+						<li><em>American War</em> — Omar El Akkad</li>
+						<li><em>Antifragile: Things That Gain from Disorder</em> — Nassim Nicholas Taleb</li>
+						<li><em>Armada</em> — Ernest Cline</li>
+						<li><em>As I Lay Dying</em> — William Faulkner</li>
+						<li><em>Atlas Shrugged</em> — Ayn Rand</li>
+						<li><em>Becoming</em> — Michelle Obama</li>
+						<li><em>Big Sur</em> — Jack Kerouac</li>
+						<li><em>Brave New World</em> — Aldous Huxley</li>
+						<li><em>Cathedral</em> — Raymond Carver</li>
+						<li><em>Catching Fire (The Hunger Games, #2)</em> — Suzanne Collins</li>
+						<li><em>Childhood's End</em> — Arthur C. Clarke</li>
+						<li><em>Cosmos</em> — Carl Sagan</li>
+						<li><em>Cracking the Coding Interview: 189 Programming Questions and Solutions</em> — Gayle Laakmann McDowell</li>
+						<li><em>Crime and Punishment</em> — Fyodor Dostoevsky</li>
+						<li><em>Cryptonomicon</em> — Neal Stephenson</li>
+						<li><em>Deep Work: Rules for Focused Success in a Distracted World</em> — Cal Newport</li>
+						<li><em>Dhalgren</em> — Samuel R. Delany</li>
+						<li><em>Dune (Dune, #1)</em> — Frank Herbert</li>
+						<li><em>East of Eden</em> — John Steinbeck</li>
+						<li><em>Ender's Game (Ender's Saga, #1)</em> — Orson Scott Card</li>
+						<li><em>Everything I Never Told You</em> — Celeste Ng</li>
+						<li><em>Fahrenheit 451</em> — Ray Bradbury</li>
+						<li><em>Fight Club</em> — Chuck Palahniuk</li>
+						<li><em>Flowers for Algernon</em> — Daniel Keyes</li>
+						<li><em>Foundation (Foundation, #1)</em> — Isaac Asimov</li>
+						<li><em>Freedom</em> — Jonathan Franzen</li>
+						<li><em>Gödel, Escher, Bach: An Eternal Golden Braid</em> — Douglas R. Hofstadter</li>
+						<li><em>Ham on Rye</em> — Charles Bukowski</li>
+						<li><em>Harry Potter and the Sorcerer’s Stone (Harry Potter, #1)</em> — J.K. Rowling</li>
+						<li><em>Harry Potter and the Chamber of Secrets (Harry Potter, #2)</em> — J.K. Rowling</li>
+						<li><em>Harry Potter and the Prisoner of Azkaban (Harry Potter, #3)</em> — J.K. Rowling</li>
+						<li><em>Harry Potter and the Goblet of Fire (Harry Potter, #4)</em> — J.K. Rowling</li>
+						<li><em>Harry Potter and the Order of the Phoenix (Harry Potter, #5)</em> — J.K. Rowling</li>
+						<li><em>Harry Potter and the Half-Blood Prince (Harry Potter, #6)</em> — J.K. Rowling</li>
+						<li><em>Harry Potter and the Deathly Hallows (Harry Potter, #7)</em> — J.K. Rowling</li>
+						<li><em>On Booze</em> — F. Scott Fitzgerald</li>
+						<li><em>Infinite Jest</em> — David Foster Wallace</li>
+						<li><em>Into Thin Air: A Personal Account of the Mt. Everest Disaster</em> — Jon Krakauer</li>
+						<li><em>Jitterbug Perfume</em> — Tom Robbins</li>
+						<li><em>Jurassic Park (Jurassic Park, #1)</em> — Michael Crichton</li>
+						<li><em>Kitchen Confidential: Adventures in the Culinary Underbelly</em> — Anthony Bourdain</li>
+						<li><em>Lolita</em> — Vladimir Nabokov</li>
+						<li><em>Lonesome Dove</em> — Larry McMurtry</li>
+						<li><em>Man's Search for Meaning</em> — Viktor E. Frankl</li>
+						<li><em>Meditations</em> — Marcus Aurelius</li>
+						<li><em>More Than Words</em> — Jill Santopolo</li>
+						<li><em>Mother Night</em> — Kurt Vonnegut Jr.</li>
+						<li><em>Neuromancer</em> — William Gibson</li>
+						<li><em>Never Let Me Go</em> — Kazuo Ishiguro</li>
+						<li><em>Nineteen Eighty-Four</em> — George Orwell</li>
+						<li><em>Norwegian Wood</em> — Haruki Murakami</li>
+						<li><em>On the Road</em> — Jack Kerouac</li>
+						<li><em>Player Piano</em> — Kurt Vonnegut Jr.</li>
+						<li><em>Project Hail Mary</em> — Andy Weir</li>
+						<li><em>Ready Player One</em> — Ernest Cline</li>
+						<li><em>Red Rising (Red Rising Saga, #1)</em> — Pierce Brown</li>
+						<li><em>Sapiens: A Brief History of Humankind</em> — Yuval Noah Harari</li>
+						<li><em>Snow Crash</em> — Neal Stephenson</li>
+						<li><em>Stoner</em> — John Williams</li>
+						<li><em>Superforecasting: The Art and Science of Prediction</em> — Philip E. Tetlock</li>
+						<li><em>Surely You're Joking, Mr. Feynman!</em> — Richard P. Feynman</li>
+						<li><em>Tender Is the Night</em> — F. Scott Fitzgerald</li>
+						<li><em>The Catcher in the Rye</em> — J.D. Salinger</li>
+						<li><em>The Dharma Bums</em> — Jack Kerouac</li>
+						<li><em>The Doors of Perception</em> — Aldous Huxley</li>
+						<li><em>The Genius and the Goddess</em> — Aldous Huxley</li>
+						<li><em>The Giver</em> — Lois Lowry</li>
+						<li><em>The Grapes of Wrath</em> — John Steinbeck</li>
+						<li><em>The Great Gatsby</em> — F. Scott Fitzgerald</li>
+						<li><em>The Image: A Guide to Pseudo-Events in America</em> — Daniel J. Boorstin</li>
+						<li><em>The Martian</em> — Andy Weir</li>
+						<li><em>The Pale King</em> — David Foster Wallace</li>
+						<li><em>The Picture of Dorian Gray</em> — Oscar Wilde</li>
+						<li><em>The Power of Now: A Guide to Spiritual Enlightenment</em> — Eckhart Tolle</li>
+						<li><em>The Pragmatic Programmer: Your Journey to Mastery</em> — Andrew Hunt; David Thomas</li>
+						<li><em>The Right Stuff</em> — Tom Wolfe</li>
+						<li><em>The Road</em> — Cormac McCarthy</li>
+						<li><em>The Secret History</em> — Donna Tartt</li>
+						<li><em>The Sirens of Titan</em> — Kurt Vonnegut Jr.</li>
+						<li><em>The Subterraneans</em> — Jack Kerouac</li>
+						<li><em>The Sun Also Rises</em> — Ernest Hemingway</li>
+						<li><em>The Three Stigmata of Palmer Eldritch</em> — Philip K. Dick</li>
+						<li><em>The Wind-Up Bird Chronicle</em> — Haruki Murakami</li>
+						<li><em>Thinking, Fast and Slow</em> — Daniel Kahneman</li>
+						<li><em>This Is How You Lose the Time War</em> — Amal El-Mohtar; Max Gladstone</li>
+						<li><em>To Kill a Mockingbird</em> — Harper Lee</li>
+						<li><em>Underworld</em> — Don DeLillo</li>
+						<li><em>Vanity of Duluoz</em> — Jack Kerouac</li>
+						<li><em>Zen and the Art of Motorcycle Maintenance: An Inquiry Into Values</em> — Robert M. Pirsig</li>
+						<li><em>Zero K</em> — Don DeLillo</li>
+					</ul>
+
+				</div>
+			</article>
 		</main>
 	</body>
-
-	<style>
-		main {
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			padding: 2em 1em;
-		}
-		
-		main h1 {
-			margin-bottom: 1.5em;
-		}
-		
-		@media (max-width: 720px) {
-			.books-title {
-				text-align: center !important;
-				width: 100%;
-				display: flex;
-				justify-content: center;
-			}
-		}
-		
-		main ul {
-			padding: 0;
-			display: flex;
-		}
-		
-		main li {
-			margin-bottom: 0.5em;
-			font-size: 1.2em;
-			text-align: left;
-			width: fit-content;
-		}
-	</style>
 </html>
