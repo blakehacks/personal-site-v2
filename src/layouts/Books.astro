@@ -29,6 +29,15 @@ const { title, description = "Blake Maczka's personal website" } = Astro.props;
 			margin-bottom: 1.5em;
 		}
 		
+		@media (max-width: 720px) {
+			.books-title {
+				text-align: center !important;
+				width: 100%;
+				display: flex;
+				justify-content: center;
+			}
+		}
+		
 		main ul {
 			padding: 0;
 			display: flex;
