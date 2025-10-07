@@ -6,24 +6,84 @@ const FILE = '/LivesAndFates.pdf';
 
 <Layout title="Read the Book">
   <main style="padding: 1rem;">
-    <div style="margin-bottom: 1rem;">
-      <a href={FILE} download class="btn">⬇️ Download PDF</a>
-      <a href={FILE} target="_blank" rel="noopener" class="btn">Open in new tab</a>
+    <!-- Centered button group (inline styles do the layout) -->
+    <div
+      style="
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        gap:.75rem;
+        flex-wrap:wrap;
+        margin:0 auto 1rem;
+        max-width:900px;
+        text-align:center;
+      "
+    >
+      <!-- Primary (download) -->
+      <a
+        href={FILE}
+        download
+        class="btn btn--primary"
+        aria-label="Download PDF"
+        style="
+          display:inline-flex;
+          align-items:center;
+          gap:.5rem;
+          padding:.75rem 1rem;
+          border-radius:9999px;
+          text-decoration:none;
+          font-weight:700;
+          letter-spacing:.2px;
+          background:#e13b31;            /* match your SVG red */
+          color:#fff;
+          box-shadow:0 6px 18px rgba(225,59,49,.25);
+          transform:translateZ(0);
+        "
+      >
+        ⬇️ Download PDF
+      </a>
+
+      <!-- Secondary (open) -->
+      <a
+        href={FILE}
+        target="_blank"
+        rel="noopener"
+        class="btn btn--ghost"
+        aria-label="Open PDF in new tab"
+        style="
+          display:inline-flex;
+          align-items:center;
+          gap:.5rem;
+          padding:.75rem 1rem;
+          border-radius:9999px;
+          text-decoration:none;
+          font-weight:700;
+          letter-spacing:.2px;
+          background:#fff;
+          color:#111;
+          border:2px solid #e7e7e7;
+          box-shadow:0 2px 10px rgba(0,0,0,.06);
+          transform:translateZ(0);
+        "
+      >
+        Open in new tab
+      </a>
     </div>
 
     <PdfReader url={FILE} client:load />
   </main>
 
   <style>
-    .btn {
-      display:inline-block;
-      padding:.5rem .8rem;
-      border:1px solid #ddd;
-      border-radius:.5rem;
-      text-decoration:none;
-      font-weight:600;
-      margin-right:.5rem;
+    /* Motion/hover polish (kept in CSS; layout is inline as requested) */
+    .btn { transition: transform 160ms ease, box-shadow 160ms ease, background 160ms ease, border-color 160ms ease; }
+    .btn:hover, .btn:focus-visible { transform: translateY(-1px) scale(1.02); }
+    .btn:active { transform: translateY(0) scale(0.985); }
+
+    .btn--primary:hover { box-shadow: 0 10px 26px rgba(225,59,49,.33); }
+    .btn--ghost:hover { border-color: #d5d5d5; background: #fafafa; box-shadow: 0 4px 14px rgba(0,0,0,.10); }
+
+    @media (prefers-reduced-motion: reduce) {
+      .btn { transition: none; }
     }
-    .btn:hover { background:#f7f7f7; }
   </style>
 </Layout>
