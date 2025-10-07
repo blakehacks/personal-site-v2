@@ -43,7 +43,20 @@ const { title = "Books", description = "Blake Maczka's personal website" } = Ast
 				margin: 0 0 0.5em 0;
 			}
 
-			/* List formatting: vertical list with bullets */
+			.toc {
+				text-align: center;
+				margin-bottom: 1.5em;
+				font-size: 0.95em;
+			}
+			.toc a {
+				margin: 0 0.5em;
+				text-decoration: none;
+				color: rgb(var(--link));
+			}
+			.toc a:hover {
+				text-decoration: underline;
+			}
+
 			.prose ul {
 				padding-left: 1.25em;
 				margin: 0 0 1em 0;
@@ -58,11 +71,17 @@ const { title = "Books", description = "Blake Maczka's personal website" } = Ast
 				line-height: 1.4;
 			}
 
-			/* Year markers */
 			.year {
 				font-weight: 700;
 				margin: 0.75em 0 0.25em;
 			}
+
+			.toc {
+				text-align: center;
+				margin-bottom: 1.5em;
+				font-size: 0.95em;
+			}
+
 		</style>
 	</head>
 
@@ -76,7 +95,19 @@ const { title = "Books", description = "Blake Maczka's personal website" } = Ast
 						<hr />
 					</div>
 
-					<p class="year">2025</p>
+					<div class="toc">
+						<a href="#2025">2025</a> |
+						<a href="#2024">2024</a> |
+						<a href="#2023">2023</a> |
+						<a href="#2022">2022</a> |
+						<a href="#2021">2021</a> |
+						<a href="#2020">2020</a> |
+						<a href="#2019">2019</a> |
+						<a href="#2018">2018</a> |
+						<a href="#beyond">Beyond</a>
+					</div>
+
+					<p class="year" id="2025">2025</p>
 					<ul>
 						<li><em>Lonesome Dove</em> — Larry McMurtry (July 2025)</li>
 						<li><em>Jax Trax</em> — Jack Olive (May 2025)</li>
@@ -90,7 +121,7 @@ const { title = "Books", description = "Blake Maczka's personal website" } = Ast
 						<li><em>The Creation of the American Republic, 1776-1787</em> — Gordon S. Wood (January 2025)</li>
 					</ul>
 
-					<p class="year">2024</p>
+					<p class="year" id="2024">2024</p>
 					<ul>
 						<li><em>Founding Brothers</em> — Joseph J. Ellis (November 2024)</li>
 						<li><em>Sometimes a Great Notion</em> — Ken Kesey (August 2024)</li>
@@ -104,7 +135,7 @@ const { title = "Books", description = "Blake Maczka's personal website" } = Ast
 						<li><em>The Disappearance of God</em> — Richard Elliott Friedman (January 2024)</li>
 					</ul>
 
-					<p class="year">2023</p>
+					<p class="year" id="2023">2023</p>
 					<ul>
 						<li><em>Beloved</em> — Toni Morrison (December 2023)</li>
 						<li><em>Just for Fun: The Story of an Accidental Revolutionary</em> — Linus Torvalds (November 2023)</li>
@@ -120,7 +151,7 @@ const { title = "Books", description = "Blake Maczka's personal website" } = Ast
 						<li><em>Europe Central</em> — William T. Vollmann (February 2023)</li>
 					</ul>
 
-					<p class="year">2022</p>
+					<p class="year" id="2022">2022</p>
 					<ul>
 						<li><em>Peacemaking among Primates</em> — Frans de Waal (November 2022)</li>
 						<li><em>Everything Flows</em> — Vasily Grossman (October 2022)</li>
@@ -133,7 +164,7 @@ const { title = "Books", description = "Blake Maczka's personal website" } = Ast
 						<li><em>Childhood's End</em> — Arthur C. Clarke (January 2022)</li>
 					</ul>
 
-					<p class="year">2021</p>
+					<p class="year" id="2021">2021</p>
 					<ul>
 						<li><em>Player Piano</em> — Kurt Vonnegut Jr. (August 2021)</li>
 						<li><em>A Scanner Darkly</em> — Philip K. Dick (June 2021)</li>
@@ -148,7 +179,7 @@ const { title = "Books", description = "Blake Maczka's personal website" } = Ast
 						<li><em>Zero K</em> — Don DeLillo (January 2021)</li>
 					</ul>
 
-					<p class="year">2020</p>
+					<p class="year" id="2020">2020</p>
 					<ul>
 						<li><em>Coup d'État: A Practical Handbook</em> — Edward N. Luttwak (December 2020)</li>
 						<li><em>Cat's Cradle</em> — Kurt Vonnegut Jr. (December 2020)</li>
@@ -160,7 +191,7 @@ const { title = "Books", description = "Blake Maczka's personal website" } = Ast
 						<li><em>Last and First Men</em> — Olaf Stapledon (January 2020)</li>
 					</ul>
 
-					<p class="year">2019</p>
+					<p class="year" id="2019">2019</p>
 					<ul>
 						<li><em>God Bless You, Dr. Kevorkian</em> — Kurt Vonnegut Jr. (December 2019)</li>
 						<li><em>Warts and All</em> — Drew Friedman; Josh Alan Friedman (December 2019)</li>
@@ -182,7 +213,7 @@ const { title = "Books", description = "Blake Maczka's personal website" } = Ast
 						<li><em>My Century</em> — Günter Grass (January 2019)</li>
 					</ul>
 
-					<p class="year">2018</p>
+					<p class="year" id="2018">2018</p>
 					<ul>
 						<li><em>The Origin of Consciousness in the Breakdown of the Bicameral Mind</em> — Julian Jaynes (December 2018)</li>
 						<li><em>Cat's Cradle</em> — Kurt Vonnegut Jr. (October 2018)</li>
@@ -209,7 +240,7 @@ const { title = "Books", description = "Blake Maczka's personal website" } = Ast
 						<li><em>The Pale King</em> — David Foster Wallace (January 2018)</li>
 					</ul>
 
-					<p class="year">Beyond</p>
+					<p class="year" id="beyond">Beyond</p>
 					<ul>
 						<li><em>1984</em> — George Orwell</li>
 						<li><em>Antifragile: Things That Gain from Disorder</em> — Nassim Nicholas Taleb</li>
@@ -224,7 +255,6 @@ const { title = "Books", description = "Blake Maczka's personal website" } = Ast
 						<li><em>Into Thin Air: A Personal Account of the Mt. Everest Disaster</em> — Jon Krakauer</li>
 						<li><em>Jurassic Park (Jurassic Park, #1)</em> — Michael Crichton</li>
 						<li><em>Neuromancer</em> — William Gibson</li>
-						<li><em>Nineteen Eighty-Four</em> — George Orwell</li>
 						<li><em>On the Road</em> — Jack Kerouac</li>
 						<li><em>Sapiens: A Brief History of Humankind</em> — Yuval Noah Harari</li>
 						<li><em>Surely You're Joking, Mr. Feynman!</em> — Richard P. Feynman</li>
