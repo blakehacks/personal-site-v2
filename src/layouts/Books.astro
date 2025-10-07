@@ -5,7 +5,7 @@ import Header from '../components/Header.astro';
 
 type Props = CollectionEntry<'blog'>['data'];
 
-const { title = "Books I've Read", description = "Blake Maczka's personal website" } = Astro.props;
+const { title = "Books", description = "Blake Maczka's personal website" } = Astro.props;
 ---
 
 <html lang="en">
@@ -71,11 +71,10 @@ const { title = "Books I've Read", description = "Blake Maczka's personal websit
 					</div>
 
 					<ul>
-						<li><em>Sovietistan: Travels in Turkmenistan, Kazakhstan, Tajikistan, Kyrgyzstan, and Uzbekistan</em> — Erika Fatland (February 2025)</li>
+						<li><em>Sovietistan</em> — Erika Fatland (February 2025)</li>
 						<li><em>The Tower</em> — Kelly Cordes (January 2025)</li>
 						<li><em>The Creation of the American Republic, 1776-1787</em> — Gordon S. Wood (January 2025)</li>
-						<li><em>Founding Brothers: The Revolutionary Generation</em> — Joseph J. Ellis (November 2024)</li>
-						<li><em>Create Dangerously</em> — Albert Camus (August 2024)</li>
+						<li><em>Founding Brothers</em> — Joseph J. Ellis (November 2024)</li>
 						<li><em>Sometimes a Great Notion</em> — Ken Kesey (August 2024)</li>
 						<li><em>Arbitrary Lines: How Zoning Broke the American City and How to Fix It</em> — M. Nolan Gray (June 2024)</li>
 						<li><em>Levels of the Game</em> — John McPhee (May 2024)</li>
@@ -85,7 +84,7 @@ const { title = "Books I've Read", description = "Blake Maczka's personal websit
 						<li><em>Star Maker</em> — Olaf Stapledon (March 2024)</li>
 						<li><em>The Doors of the Sea: Where Was God in the Tsunami</em> — David Bentley Hart (January 2024)</li>
 						<li><em>The Disappearance of God</em> — Richard Elliott Friedman (January 2024)</li>
-						<li><em>Beloved (Beloved Trilogy, #1)</em> — Toni Morrison (December 2023)</li>
+						<li><em>Beloved</em> — Toni Morrison (December 2023)</li>
 						<li><em>Just for Fun: The Story of an Accidental Revolutionary</em> — Linus Torvalds (November 2023)</li>
 						<li><em>House of Light</em> — Mary Oliver (November 2023)</li>
 						<li><em>I Feel Love: MDMA and the Quest for Connection in a Fractured World</em> — Rachel Nuwer (November 2023)</li>
@@ -101,8 +100,8 @@ const { title = "Books I've Read", description = "Blake Maczka's personal websit
 						<li><em>Everything Flows</em> — Vasily Grossman (October 2022)</li>
 						<li><em>The Right Stuff</em> — Tom Wolfe (August 2022)</li>
 						<li><em>Where the Crawdads Sing</em> — Delia Owens (June 2022)</li>
-						<li><em>Life and Fate (Stalingrad, #2)</em> — Vasily Grossman (July 2022)</li>
-						<li><em>Stalingrad (Stalingrad, #1)</em> — Vasily Grossman (April 2022)</li>
+						<li><em>Life and Fate</em> — Vasily Grossman (July 2022)</li>
+						<li><em>Stalingrad</em> — Vasily Grossman (April 2022)</li>
 						<li><em>Mother Night</em> — Kurt Vonnegut Jr. (March 2022)</li>
 						<li><em>The Curve of Binding Energy</em> — John McPhee (January 2022)</li>
 						<li><em>Childhood's End</em> — Arthur C. Clarke (January 2022)</li>
@@ -111,7 +110,7 @@ const { title = "Books I've Read", description = "Blake Maczka's personal websit
 						<li><em>The Three Stigmata of Palmer Eldritch</em> — Philip K. Dick (May 2021)</li>
 						<li><em>Dispatches</em> — Michael Herr (May 2021)</li>
 						<li><em>Love, Kurt: The Vonnegut Love Letters, 1941-1945</em> — Kurt Vonnegut Jr. (April 2021)</li>
-						<li><em>A Contract With God (A Contract With God, #1)</em> — Will Eisner (March 2021)</li>
+						<li><em>A Contract With God</em> — Will Eisner (March 2021)</li>
 						<li><em>Slaughterhouse-Five</em> — Kurt Vonnegut Jr. (March 2021)</li>
 						<li><em>Jax Trax</em> — Jack Olive (February 2021)</li>
 						<li><em>The Sirens of Titan</em> — Kurt Vonnegut Jr. (January 2021)</li>
@@ -169,73 +168,32 @@ const { title = "Books I've Read", description = "Blake Maczka's personal websit
 
 						<!-- Undated (rated on Goodreads but no BoB date) at bottom -->
 						<li><em>1984</em> — George Orwell</li>
-						<li><em>Abaddon's Gate (The Expanse, #3)</em> — James S.A. Corey</li>
-						<li><em>After Dark</em> — Haruki Murakami</li>
-						<li><em>After Virtue: A Study in Moral Theory</em> — Alasdair MacIntyre</li>
-						<li><em>Against the Fall of Night</em> — Arthur C. Clarke</li>
-						<li><em>All the Pretty Horses</em> — Cormac McCarthy</li>
-						<li><em>American War</em> — Omar El Akkad</li>
 						<li><em>Antifragile: Things That Gain from Disorder</em> — Nassim Nicholas Taleb</li>
-						<li><em>Armada</em> — Ernest Cline</li>
-						<li><em>As I Lay Dying</em> — William Faulkner</li>
-						<li><em>Atlas Shrugged</em> — Ayn Rand</li>
-						<li><em>Becoming</em> — Michelle Obama</li>
 						<li><em>Big Sur</em> — Jack Kerouac</li>
 						<li><em>Brave New World</em> — Aldous Huxley</li>
-						<li><em>Cathedral</em> — Raymond Carver</li>
-						<li><em>Catching Fire (The Hunger Games, #2)</em> — Suzanne Collins</li>
 						<li><em>Childhood's End</em> — Arthur C. Clarke</li>
-						<li><em>Cosmos</em> — Carl Sagan</li>
-						<li><em>Cracking the Coding Interview: 189 Programming Questions and Solutions</em> — Gayle Laakmann McDowell</li>
-						<li><em>Crime and Punishment</em> — Fyodor Dostoevsky</li>
-						<li><em>Cryptonomicon</em> — Neal Stephenson</li>
-						<li><em>Deep Work: Rules for Focused Success in a Distracted World</em> — Cal Newport</li>
-						<li><em>Dhalgren</em> — Samuel R. Delany</li>
-						<li><em>Dune (Dune, #1)</em> — Frank Herbert</li>
 						<li><em>East of Eden</em> — John Steinbeck</li>
 						<li><em>Ender's Game (Ender's Saga, #1)</em> — Orson Scott Card</li>
-						<li><em>Everything I Never Told You</em> — Celeste Ng</li>
 						<li><em>Fahrenheit 451</em> — Ray Bradbury</li>
 						<li><em>Fight Club</em> — Chuck Palahniuk</li>
-						<li><em>Flowers for Algernon</em> — Daniel Keyes</li>
 						<li><em>Foundation (Foundation, #1)</em> — Isaac Asimov</li>
-						<li><em>Freedom</em> — Jonathan Franzen</li>
 						<li><em>Gödel, Escher, Bach: An Eternal Golden Braid</em> — Douglas R. Hofstadter</li>
 						<li><em>Ham on Rye</em> — Charles Bukowski</li>
-						<li><em>Harry Potter and the Sorcerer’s Stone (Harry Potter, #1)</em> — J.K. Rowling</li>
-						<li><em>Harry Potter and the Chamber of Secrets (Harry Potter, #2)</em> — J.K. Rowling</li>
-						<li><em>Harry Potter and the Prisoner of Azkaban (Harry Potter, #3)</em> — J.K. Rowling</li>
-						<li><em>Harry Potter and the Goblet of Fire (Harry Potter, #4)</em> — J.K. Rowling</li>
-						<li><em>Harry Potter and the Order of the Phoenix (Harry Potter, #5)</em> — J.K. Rowling</li>
-						<li><em>Harry Potter and the Half-Blood Prince (Harry Potter, #6)</em> — J.K. Rowling</li>
-						<li><em>Harry Potter and the Deathly Hallows (Harry Potter, #7)</em> — J.K. Rowling</li>
 						<li><em>On Booze</em> — F. Scott Fitzgerald</li>
 						<li><em>Infinite Jest</em> — David Foster Wallace</li>
 						<li><em>Into Thin Air: A Personal Account of the Mt. Everest Disaster</em> — Jon Krakauer</li>
-						<li><em>Jitterbug Perfume</em> — Tom Robbins</li>
 						<li><em>Jurassic Park (Jurassic Park, #1)</em> — Michael Crichton</li>
-						<li><em>Kitchen Confidential: Adventures in the Culinary Underbelly</em> — Anthony Bourdain</li>
-						<li><em>Lolita</em> — Vladimir Nabokov</li>
 						<li><em>Lonesome Dove</em> — Larry McMurtry</li>
 						<li><em>Man's Search for Meaning</em> — Viktor E. Frankl</li>
-						<li><em>Meditations</em> — Marcus Aurelius</li>
-						<li><em>More Than Words</em> — Jill Santopolo</li>
 						<li><em>Mother Night</em> — Kurt Vonnegut Jr.</li>
 						<li><em>Neuromancer</em> — William Gibson</li>
-						<li><em>Never Let Me Go</em> — Kazuo Ishiguro</li>
 						<li><em>Nineteen Eighty-Four</em> — George Orwell</li>
-						<li><em>Norwegian Wood</em> — Haruki Murakami</li>
 						<li><em>On the Road</em> — Jack Kerouac</li>
 						<li><em>Player Piano</em> — Kurt Vonnegut Jr.</li>
-						<li><em>Project Hail Mary</em> — Andy Weir</li>
-						<li><em>Ready Player One</em> — Ernest Cline</li>
-						<li><em>Red Rising (Red Rising Saga, #1)</em> — Pierce Brown</li>
 						<li><em>Sapiens: A Brief History of Humankind</em> — Yuval Noah Harari</li>
 						<li><em>Snow Crash</em> — Neal Stephenson</li>
-						<li><em>Stoner</em> — John Williams</li>
 						<li><em>Superforecasting: The Art and Science of Prediction</em> — Philip E. Tetlock</li>
 						<li><em>Surely You're Joking, Mr. Feynman!</em> — Richard P. Feynman</li>
-						<li><em>Tender Is the Night</em> — F. Scott Fitzgerald</li>
 						<li><em>The Catcher in the Rye</em> — J.D. Salinger</li>
 						<li><em>The Dharma Bums</em> — Jack Kerouac</li>
 						<li><em>The Doors of Perception</em> — Aldous Huxley</li>
@@ -244,21 +202,12 @@ const { title = "Books I've Read", description = "Blake Maczka's personal websit
 						<li><em>The Grapes of Wrath</em> — John Steinbeck</li>
 						<li><em>The Great Gatsby</em> — F. Scott Fitzgerald</li>
 						<li><em>The Image: A Guide to Pseudo-Events in America</em> — Daniel J. Boorstin</li>
-						<li><em>The Martian</em> — Andy Weir</li>
 						<li><em>The Pale King</em> — David Foster Wallace</li>
-						<li><em>The Picture of Dorian Gray</em> — Oscar Wilde</li>
-						<li><em>The Power of Now: A Guide to Spiritual Enlightenment</em> — Eckhart Tolle</li>
-						<li><em>The Pragmatic Programmer: Your Journey to Mastery</em> — Andrew Hunt; David Thomas</li>
 						<li><em>The Right Stuff</em> — Tom Wolfe</li>
-						<li><em>The Road</em> — Cormac McCarthy</li>
-						<li><em>The Secret History</em> — Donna Tartt</li>
 						<li><em>The Sirens of Titan</em> — Kurt Vonnegut Jr.</li>
 						<li><em>The Subterraneans</em> — Jack Kerouac</li>
 						<li><em>The Sun Also Rises</em> — Ernest Hemingway</li>
 						<li><em>The Three Stigmata of Palmer Eldritch</em> — Philip K. Dick</li>
-						<li><em>The Wind-Up Bird Chronicle</em> — Haruki Murakami</li>
-						<li><em>Thinking, Fast and Slow</em> — Daniel Kahneman</li>
-						<li><em>This Is How You Lose the Time War</em> — Amal El-Mohtar; Max Gladstone</li>
 						<li><em>To Kill a Mockingbird</em> — Harper Lee</li>
 						<li><em>Underworld</em> — Don DeLillo</li>
 						<li><em>Vanity of Duluoz</em> — Jack Kerouac</li>

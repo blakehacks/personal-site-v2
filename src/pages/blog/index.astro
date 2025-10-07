@@ -14,8 +14,10 @@ const posts = (await getCollection('blog')).sort(
 <!doctype html>
 <html lang="en">
 	<head>
-		<BaseHead title="Things I've Written" description={SITE_DESCRIPTION} />
+		<!-- Keep the document/page title as "Blog" -->
+		<BaseHead title="Blog" description={SITE_DESCRIPTION} />
 		<style>
+			/* --- existing styles (unchanged) --- */
 			main {
 				width: 960px;
 			}
@@ -83,11 +85,37 @@ const posts = (await getCollection('blog')).sort(
 					font-size: 1.563em;
 				}
 			}
+
+			/* --- added header styles (scoped; won't affect list/link behavior) --- */
+			.blog-header {
+				width: 720px;
+				max-width: calc(100% - 2em);
+				margin: auto;
+				padding: 1em;
+				color: rgb(var(--gray-dark));
+			}
+			.blog-header .title {
+				margin-bottom: 1em;
+				padding: 1em 0;
+				text-align: center;
+				line-height: 1;
+			}
+			.blog-header .title h1 {
+				margin: 0 0 0.5em 0;
+			}
 		</style>
 	</head>
 	<body>
 		<Header />
 		<main>
+			<!-- New header block; matches Books header style -->
+			<div class="blog-header">
+				<div class="title">
+					<h1>Things I've Written</h1>
+					<hr />
+				</div>
+			</div>
+
 			<section>
 				<ul>
 					{
