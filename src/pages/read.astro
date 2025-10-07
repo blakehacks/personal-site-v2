@@ -1,0 +1,29 @@
+---
+import Layout from '../layouts/BaseLayout.astro';
+import PdfReader from '../components/PdfReader.jsx';
+const FILE = '/LivesAndFates.pdf';
+---
+
+<Layout title="Read the Book">
+  <main style="padding: 1rem;">
+    <div style="margin-bottom: 1rem;">
+      <a href={FILE} download class="btn">⬇️ Download PDF</a>
+      <a href={FILE} target="_blank" rel="noopener" class="btn">Open in new tab</a>
+    </div>
+
+    <PdfReader url={FILE} client:load />
+  </main>
+
+  <style>
+    .btn {
+      display:inline-block;
+      padding:.5rem .8rem;
+      border:1px solid #ddd;
+      border-radius:.5rem;
+      text-decoration:none;
+      font-weight:600;
+      margin-right:.5rem;
+    }
+    .btn:hover { background:#f7f7f7; }
+  </style>
+</Layout>
