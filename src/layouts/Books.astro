@@ -283,5 +283,23 @@ const { title = "Books", description = "Blake Maczka's personal website" } = Ast
 				</div>
 			</article>
 		</main>
+
+		<script>
+			// Handle anchor link scrolling manually to avoid race conditions
+			document.querySelectorAll('.toc a[href^="#"]').forEach(anchor => {
+				anchor.addEventListener('click', function(e) {
+					e.preventDefault();
+					const targetId = this.getAttribute('href')?.substring(1);
+					if (targetId) {
+						const target = document.getElementById(targetId);
+						if (target) {
+							target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+							// Update URL without triggering navigation
+							history.pushState(null, '', `#${targetId}`);
+						}
+					}
+				});
+			});
+		</script>
 	</body>
 </html>
