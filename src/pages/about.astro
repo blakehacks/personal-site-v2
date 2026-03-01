@@ -1,17 +1,16 @@
 ---
-import AboutHeroImage from '../assets/blog-placeholder-about.jpg';
+import Headshot from '../assets/headshot.webp';
 import Layout from '../layouts/AboutMe.astro';
 ---
 
 <Layout
 	title="About Me"
 	description="Lorem ipsum dolor sit amet"
-	heroImage={AboutHeroImage}
-	pubDate={new Date()}
+	headshot={Headshot}
 >
 	<p>
 		Hi there! I'm Blake. I'm a software engineer and writer based in Brooklyn.
-		I grew up in Richardson, Texas. 
+		I grew up in Richardson, Texas.
 		I have degrees from the University of Michigan and the University of Chicago in business and computer science, respectively.
 		I currently work at Squarespace as a software engineer. Prior to Squarespace,
 		I worked at Rockerbox for five years in product and engineering roles.
@@ -19,9 +18,9 @@ import Layout from '../layouts/AboutMe.astro';
 
 	<p>
 		I love trekking, reading, and tinkering.
-		I'm a big fan of the Dallas Mavericks and all things University of Michigan athletics.
+		I'm a big fan of the Dallas Mavericks and all things University of Michigan athletics. I wrote and self-published a family history book called Lives and Fates that you can read on my <a href={`/blog`}> blog</a>.
 	</p>
-	
+
 	<p>
 		Want to get in touch? Email me at blakemaczka@gmail dot com
 	</p>
