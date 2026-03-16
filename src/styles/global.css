@@ -82,7 +82,7 @@ a {
 	color: rgb(var(--black));
 }
 a:hover {
-	color: rgb(var(--black));
+	color: var(--accent);
 }
 p {
 	margin-bottom: 1em;
