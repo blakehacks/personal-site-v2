@@ -1,0 +1,77 @@
+---
+import { getCollection } from 'astro:content';
+import BaseHead from '../../components/BaseHead.astro';
+import Header from '../../components/Header.astro';
+import { SITE_DESCRIPTION } from '../../consts';
+
+const projects = (await getCollection('projects')).sort(
+	(a, b) => (a.data.order ?? 999) - (b.data.order ?? 999),
+);
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title="Projects" description={SITE_DESCRIPTION} />
+		<style>
+			.projects-header {
+				width: 720px;
+				max-width: calc(100% - 2em);
+				margin: auto;
+				padding: 1em;
+				color: rgb(var(--gray-dark));
+			}
+			.projects-header .title {
+				margin-bottom: 1em;
+				padding: 1em 0;
+				text-align: center;
+				line-height: 1;
+			}
+			.projects-header .title h1 {
+				margin: 0 0 0.5em 0;
+			}
+			.project-list {
+				width: 720px;
+				max-width: calc(100% - 2em);
+				margin: auto;
+				padding: 0 1em;
+				list-style: none;
+			}
+			.project-list li {
+				padding: 0.5em 0;
+				border-bottom: 1px solid rgb(var(--gray-light));
+			}
+			.project-list li:last-child {
+				border-bottom: none;
+			}
+			.project-list a {
+				font-size: 1.2em;
+				font-weight: 700;
+				text-decoration: none;
+				color: rgb(var(--black));
+				transition: color 0.2s ease;
+			}
+			.project-list a:hover {
+				color: rgb(var(--accent));
+			}
+		</style>
+	</head>
+	<body>
+		<Header />
+		<main>
+			<div class="projects-header">
+				<div class="title">
+					<h1>Projects</h1>
+					<hr />
+				</div>
+			</div>
+			<ul class="project-list">
+				{projects.map((project) => (
+					<li>
+						<a href={`/projects/${project.id}/`}>{project.data.title}</a>
+					</li>
+				))}
+			</ul>
+		</main>
+	</body>
+</html>

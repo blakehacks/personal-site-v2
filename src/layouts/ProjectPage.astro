@@ -1,0 +1,94 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { Image } from 'astro:assets';
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+
+type Props = CollectionEntry<'projects'>['data'];
+
+const { title, description, heroImage } = Astro.props;
+---
+
+<html lang="en">
+	<head>
+		<BaseHead title={title} description={description ?? title} />
+		<style>
+			main {
+				width: calc(100% - 2em);
+				max-width: 100%;
+				margin: 0;
+			}
+			.hero-image {
+				width: 100%;
+			}
+			.hero-image img {
+				display: block;
+				margin: 0 auto;
+				border-radius: 12px;
+				box-shadow: var(--box-shadow);
+			}
+			.prose {
+				width: 720px;
+				max-width: calc(100% - 2em);
+				margin: auto;
+				padding: 1em;
+				color: rgb(var(--gray-dark));
+			}
+			.title {
+				margin-bottom: 1em;
+				padding: 1em 0;
+				text-align: center;
+				line-height: 1;
+			}
+			.title h1 {
+				margin: 0 0 0.5em 0;
+			}
+		</style>
+	</head>
+
+	<body>
+		<Header />
+		<main>
+			<article>
+				<div class="hero-image">
+					{heroImage && <Image width={1020} height={510} src={heroImage} alt="" />}
+				</div>
+				<div class="prose">
+					<div style="display:flex;justify-content:center;margin:0 0 .5rem 0;">
+						<a
+							href="/projects"
+							class="btn btn--back"
+							aria-label="Go back to projects"
+							style="
+								display:inline-flex;
+								align-items:center;
+								justify-content:center;
+								gap:.5rem;
+								padding:.8rem 1.4rem;
+								border-radius:9999px;
+								text-decoration:none;
+								font-weight:700;
+								font-size:1rem;
+								letter-spacing:.2px;
+								background:#fff;
+								color:#111;
+								border:2px solid #ddd;
+								box-shadow:0 3px 10px rgba(0,0,0,.08);
+								margin:-25px 0 25px 0;
+								transition:transform .18s ease, box-shadow .18s ease, background .18s ease, border-color .18s ease;
+							"
+						>
+							← Back to Projects
+						</a>
+					</div>
+
+					<div class="title">
+						<h1>{title}</h1>
+						<hr />
+					</div>
+					<slot />
+				</div>
+			</article>
+		</main>
+	</body>
+</html>

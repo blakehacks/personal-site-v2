@@ -1,7 +1,7 @@
 ---
 title: "Lives and Fates: A Family History"
 description: "A comprehensive family history documenting the lives and stories of our ancestors"
-pubDate: 2025-10-07
+order: 1
 ---
 
 import DownloadButtons from '../../components/DownloadButtons.astro';
@@ -9,5 +9,4 @@ import PdfReader from '../../components/PdfReader.jsx';
 
 <DownloadButtons file="/LivesAndFates.pdf" />
 
-{/* Optional inline reader below the buttons */}
 <PdfReader url="/LivesAndFates.pdf" client:load />
