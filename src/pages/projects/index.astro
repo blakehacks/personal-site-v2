@@ -22,8 +22,8 @@ const projects = (await getCollection('projects')).sort(
 				color: rgb(var(--gray-dark));
 			}
 			.projects-header .title {
-				margin-bottom: 1em;
-				padding: 1em 0;
+				margin-bottom: 0.25em;
+				padding: 1em 0 0.25em 0;
 				text-align: center;
 				line-height: 1;
 			}
@@ -34,25 +34,21 @@ const projects = (await getCollection('projects')).sort(
 				width: 720px;
 				max-width: calc(100% - 2em);
 				margin: auto;
-				padding: 0 1em;
-				list-style: none;
+				padding: 0 1em 0 calc(1em + 60px);
+				list-style: disc;
 			}
 			.project-list li {
-				padding: 0.5em 0;
-				border-bottom: 1px solid rgb(var(--gray-light));
-			}
-			.project-list li:last-child {
-				border-bottom: none;
+				padding: 0.75em 0;
 			}
 			.project-list a {
-				font-size: 1.2em;
+				font-size: 1.4em;
 				font-weight: 700;
 				text-decoration: none;
 				color: rgb(var(--black));
 				transition: color 0.2s ease;
 			}
 			.project-list a:hover {
-				color: rgb(var(--accent));
+				color: var(--accent);
 			}
 		</style>
 	</head>
