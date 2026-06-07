@@ -36,6 +36,7 @@ const projects = (await getCollection('projects')).sort(
 				margin: auto;
 				padding: 0 1em 0 calc(1em + 60px);
 				list-style: disc;
+				box-sizing: border-box;
 			}
 			.project-list li {
 				padding: 0.75em 0;
@@ -49,6 +50,14 @@ const projects = (await getCollection('projects')).sort(
 			}
 			.project-list a:hover {
 				color: var(--accent);
+			}
+			@media (max-width: 720px) {
+				.project-list {
+					padding: 0 1em 0 2em;
+				}
+				.project-list a {
+					font-size: 1.2em;
+				}
 			}
 		</style>
 	</head>
