@@ -48,6 +48,7 @@ import HeaderLink from './HeaderLink.astro';
 	}
 	h2 a,
 	h2 a.active {
+		display: inline-block;
 		text-decoration: none;
 	}
 	nav {
@@ -62,6 +63,17 @@ import HeaderLink from './HeaderLink.astro';
 		transform: translateX(-50%);
 		display: flex;
 		gap: 1em;
+	}
+	h2 a,
+	.internal-links a {
+		transition: transform 0.2s ease, opacity 0.2s ease;
+	}
+	@media (hover: hover) and (min-width: 721px) {
+		h2 a:hover,
+		.internal-links a:hover {
+			transform: translateY(-2px);
+			opacity: 0.7;
+		}
 	}
 	nav a {
 		padding: 1em 0.5em;
