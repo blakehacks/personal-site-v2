@@ -1,9 +1,11 @@
 ---
-import type { CollectionEntry } from 'astro:content';
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 
-type Props = CollectionEntry<'blog'>['data'];
+interface Props {
+	title?: string;
+	description?: string;
+}
 
 const { title = "Books", description = "Blake Maczka's personal website" } = Astro.props;
 ---
@@ -51,7 +53,7 @@ const { title = "Books", description = "Blake Maczka's personal website" } = Ast
 			.toc a {
 				margin: 0 0.5em;
 				text-decoration: none;
-				color: rgb(var(--link));
+				color: inherit;
 			}
 			.toc a:hover {
 				text-decoration: underline;
@@ -76,12 +78,9 @@ const { title = "Books", description = "Blake Maczka's personal website" } = Ast
 				margin: 0.75em 0 0.25em;
 			}
 
-			.toc {
-				text-align: center;
-				margin-bottom: 1.5em;
-				font-size: 0.95em;
+			html {
+				scroll-behavior: smooth;
 			}
-
 		</style>
 	</head>
 
@@ -293,23 +292,5 @@ const { title = "Books", description = "Blake Maczka's personal website" } = Ast
 				</div>
 			</article>
 		</main>
-
-		<script>
-			// Handle anchor link scrolling manually to avoid race conditions
-			document.querySelectorAll('.toc a[href^="#"]').forEach(anchor => {
-				anchor.addEventListener('click', function(e) {
-					e.preventDefault();
-					const targetId = this.getAttribute('href')?.substring(1);
-					if (targetId) {
-						const target = document.getElementById(targetId);
-						if (target) {
-							target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-							// Update URL without triggering navigation
-							history.pushState(null, '', `#${targetId}`);
-						}
-					}
-				});
-			});
-		</script>
 	</body>
 </html>
