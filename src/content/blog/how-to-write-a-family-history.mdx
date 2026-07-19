@@ -4,6 +4,12 @@ description: "A comprehensive guide to researching, writing, designing, and prin
 pubDate: 2026-01-03
 ---
 
+import { Image } from 'astro:assets';
+import coverPhoto from '../../assets/blog/family-history-cover.jpeg';
+import backPhoto from '../../assets/blog/family-history-back.jpeg';
+import booksPhoto from '../../assets/blog/family-history-books.jpeg';
+import booksPhoto2 from '../../assets/blog/family-history-books2.jpeg';
+
 <style>{`
   .book-photos-row {
     display: flex;
@@ -40,8 +46,8 @@ In 2025 I completed something I'd been thinking about and working on for five ye
 This is what the final product looks like:
 
 <div class="book-photos-row">
-  <img src="/blog/family-history-cover.jpeg" alt="Lives and Fates book cover" class="book-photo" />
-  <img src="/blog/family-history-back.jpeg" alt="Lives and Fates back cover" class="book-photo" />
+  <Image src={coverPhoto} width={800} alt="Lives and Fates book cover" class="book-photo" />
+  <Image src={backPhoto} width={800} alt="Lives and Fates back cover" class="book-photo" />
 </div>
 
 ## Objective
@@ -85,8 +91,8 @@ With my final design in hand, I was ready to send this off to get printed.
 With the help of ChatGPT and Google I researched printmakers who would do runs as small as 20–50 copies. I ended up using [Bookmobile](https://www.bookmobile.com/), an independent bookmaker and printing service based in Minnesota. When I had the files finalized, they printed and shipped me a proof copy. I made a number of edits to the text and cover design, and then sent the revised files off for the print run.
 
 <div class="book-photos-row">
-  <img src="/blog/family-history-books.jpeg" alt="Stack of Lives and Fates books" class="book-photo" />
-  <img src="/blog/family-history-books2.jpeg" alt="Lives and Fates book spines" class="book-photo" />
+  <Image src={booksPhoto} width={800} alt="Stack of Lives and Fates books" class="book-photo" />
+  <Image src={booksPhoto2} width={800} alt="Lives and Fates book spines" class="book-photo" />
 </div>
 
 ## Timeline
