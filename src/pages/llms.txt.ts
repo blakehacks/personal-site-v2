@@ -28,7 +28,7 @@ export const GET: APIRoute = async ({ site }) => {
 		'## Pages',
 		'',
 		item('About', url('/about/'), 'Background and how to get in touch'),
-		item("Books I've Read", url('/books/'), "A curated list of books I've read and recommend, grouped by year"),
+		item("Books I've Read", url('/books/'), 'Books Blake has read and recommends, grouped by year'),
 		item('Projects', url('/projects/')),
 		item('Blog', url('/blog/')),
 		'',
