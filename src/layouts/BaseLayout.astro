@@ -1,8 +1,9 @@
 ---
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
+import { SITE_DESCRIPTION } from '../consts';
 
-const { title, description = "Blake Maczka's personal website" } = Astro.props;
+const { title, description = SITE_DESCRIPTION } = Astro.props;
 ---
 
 <html lang="en">

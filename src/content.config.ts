@@ -10,6 +10,8 @@ const blog = defineCollection({
 			pubDate: z.coerce.date(),
 			updatedDate: z.coerce.date().optional(),
 			heroImage: image().optional(),
+			// Link-preview image (iMessage, Slack, X, search). Not shown on the page.
+			ogImage: image().optional(),
 		}),
 });
 
@@ -20,6 +22,8 @@ const projects = defineCollection({
 			title: z.string(),
 			description: z.string().optional(),
 			heroImage: image().optional(),
+			// Link-preview image (iMessage, Slack, X, search). Not shown on the page.
+			ogImage: image().optional(),
 			order: z.number().optional(),
 		}),
 });

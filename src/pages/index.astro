@@ -1,10 +1,12 @@
 ---
 import HomeLayout from '../layouts/HomeLayout.astro';
-const NAME = 'Blake Maczka';
+import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+const NAME = SITE_TITLE;
 ---
 
-<HomeLayout title="Home">
+<HomeLayout title={SITE_TITLE} description={SITE_DESCRIPTION}>
   <main class="home">
+    <h1 class="sr-only">{NAME}</h1>
     <a href="/about" class="nametag" aria-label="Go to About page">
       <svg
         class="tag-svg"
@@ -12,6 +14,7 @@ const NAME = 'Blake Maczka';
         role="img"
         aria-labelledby="title desc"
       >
+        <title id="title">Hello, my name is {NAME}</title>
         <desc id="desc">Red name-tag sticker with the name centered.</desc>
 
         <!-- Rounded card -->

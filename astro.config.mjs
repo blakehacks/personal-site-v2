@@ -9,4 +9,8 @@ import { defineConfig } from 'astro/config';
 export default defineConfig({
 	site: 'https://www.blakehacks.com',
 	integrations: [mdx(), react(), sitemap()],
+	redirects: {
+		// Old duplicate of the Lives and Fates project page.
+		'/blog/lives-and-fates-reader': '/projects/lives-and-fates/',
+	},
 });

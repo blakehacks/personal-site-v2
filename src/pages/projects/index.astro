@@ -51,6 +51,10 @@ const projects = (await getCollection('projects')).sort(
 			.project-list a:hover {
 				color: var(--accent);
 			}
+			.project-description {
+				margin: 0.25em 0 0 0;
+				color: rgb(var(--gray));
+			}
 			@media (max-width: 720px) {
 				.project-list {
 					padding: 0 1em 0 2em;
@@ -74,6 +78,9 @@ const projects = (await getCollection('projects')).sort(
 				{projects.map((project) => (
 					<li>
 						<a href={`/projects/${project.id}/`}>{project.data.title}</a>
+						{project.data.description && (
+							<p class="project-description">{project.data.description}</p>
+						)}
 					</li>
 				))}
 			</ul>
